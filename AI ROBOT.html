@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI ROBOT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <center>
+        <h1>WELCOME TO AI</h1>
+     <P>
+     <center>
+        <!-- Navbar items -->
+        <div id="navlist">
+            <a href="#">Home</a>
+            <a href="#">Our Products</a>
+            <a href="#">Careers</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">More info
+            </p>
+            </a>
+        </div>
+        <!-- logo with tag -->
+        <div class="content">
+            <form id="ai-form">
+                <input type="text" id="question" placeholder="Ask your question here">
+                <button type="button" onclick="getAnswer()">Get Answer</button>
+            </form>
+            <div id="answer"></div>
+            <h1>ARTIFICIAL INTELLIGENCE</h1>
+            <b>A COMPUTER SCIENCE</b>
+            <p>
+                How many times were you frustrated while looking out for a good collection of programming/algorithm/interview questions?
+                What did you expect and what did you get? This portal has been created to provide well written, well thought and well explained solutions for selected questions.
+      
+  
+            </p>
+            <img>
+            <img src ="E:/New folder/0a57e7be-5690-45fb-bcc7-f6768c06e4c8.a5b98632eec5ed392fe732944590d8b2.png"style="width: 600px">
+        
+        </center> 
+    </div>
+   <center>
+    <h2>ABOUT ME</h2>
+        <h3><strong></h3>
+        <p>I AM AI SPECIALIZED TO GIVE GOOD ANSWERS.</p>
+        <!-- AI Robot Form -->
+      
+        <h5>THIS IS CREATED BY MESSIAH K ASMAH</h5>
+    </center>
+    <script>
+        alert('WELCOME TO MESSIAH AI PAGE!');
+        
+        async function getAnswer() {
+            const question = document.getElementById('question').value;
+            const answerDiv = document.getElementById('answer');
+            const apiKey = 'YOUR_GOOGLE_API_KEY';
+            const cx = 'Goggle';
+            const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(question)}&key=${apiKey}&cx=${cx}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.items && data.items.length > 0) {
+                    answerDiv.innerHTML = data.items[0].snippet;
+                } else {
+                    answerDiv.innerHTML = "No answer found.";
+                }
+            } catch (error) {
+                answerDiv.innerHTML = "Error fetching answer.";
+            }
+        }
+    </script>
+</body>
+</html>
